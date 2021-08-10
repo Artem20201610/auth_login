@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import 'bulma';
-import './AuthenticationForm.scss';
 
 export const AuthenticationForm = ({ request, status, statusText, resetStatus }) => {
   const [ email, setEmail ] = useState('');

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { Navigation } from './components/Navigation';
 import { AuthenticationForm } from './components/AuthenticationForm';
 import { LoginForm } from './components/LoginForm';
 
@@ -55,6 +56,9 @@ export const App = () => {
 
   return (
     <>
+      <header>
+        <Navigation />
+      </header>
       <section className="section">
         <div className="container">
           <h1 className="title is-2">Authentication and Login Form</h1>
