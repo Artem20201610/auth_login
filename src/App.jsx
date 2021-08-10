@@ -6,7 +6,7 @@ import { LoginForm } from './components/LoginForm';
 import 'bulma';
 import './App.scss';
 
-const URL = "http://161.35.157.168:4000/auth/";
+const URL = "https://161.35.157.168:4000/auth/";
 
 export const App = () => {
   const [ status, setStatus ] = useState(null);
