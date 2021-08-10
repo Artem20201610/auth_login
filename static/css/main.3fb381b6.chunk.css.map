@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.scss"],"names":[],"mappings":"AAAA,MACE,YAAa,CACb,qBAAsB,CACtB,aAAA,CAAA,QAAS,CACV,QAGC,eAAgB,CACjB,OAGC,eAAgB","file":"main.3fb381b6.chunk.css","sourcesContent":[".form {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n\n.button {\n  max-width: 128px;\n}\n\n.input {\n  max-width: 512px;\n}\n"]}
