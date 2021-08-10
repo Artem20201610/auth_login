@@ -1,12 +1,13 @@
 {
-  "name": "react_people-table",
+  "name": "auth_login_forms",
   "homepage": ".",
   "version": "0.1.0",
   "keywords": [],
-  "author": "Mate Academy",
+  "author": "Artem Emelyanov",
   "license": "GPL-3.0",
   "dependencies": {
     "bulma": "^0.9.3",
+    "classnames": "^2.3.1",
     "nanoid": "^3.1.23",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -15,7 +16,6 @@
     "react-scripts": "3.4.3"
   },
   "devDependencies": {
-    "@mate-academy/eslint-config-react-typescript": "*",
     "@mate-academy/eslint-config-react": "*",
     "@mate-academy/stylelint-config": "*",
     "eslint": "^6.8.0",
