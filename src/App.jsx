@@ -13,6 +13,11 @@ export const App = () => {
   const [ status, setStatus ] = useState(null);
   const [ statusText, setStatusText ] = useState('');
   const [ error, setError ] = useState(null);
+
+  const resetError = () => {
+    setError(null);
+  };
+
   const errorMessage = error && (
     <article class="message is-danger">
     <div class="message-header">
@@ -31,10 +36,6 @@ export const App = () => {
   const resetStatus = () => {
     setStatus(null);
     setStatusText('');
-  };
-
-  const resetError = () => {
-    setError(null);
   };
 
   const request = async (requestBody, endpoint) => {
