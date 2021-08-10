@@ -11,25 +11,46 @@ const URL = "https://161.35.157.168:4000/auth/";
 export const App = () => {
   const [ status, setStatus ] = useState(null);
   const [ statusText, setStatusText ] = useState('');
+  const [ error, setError ] = useState(null);
+  const errorMessage = error && (
+    <article class="message is-danger">
+    <div class="message-header">
+      <p>Error</p>
+      <button
+        class="delete"
+        aria-label="delete"
+        onClick={resetError}
+      ></button>
+    </div>
+    <div class="message-body">
+      An error occured {`${error}`}
+    </div>
+  </article>);
 
   const resetStatus = () => {
     setStatus(null);
     setStatusText('');
-  }
+  };
+
+  const resetError = () => {
+    setError(null);
+  };
 
   const request = async (requestBody, endpoint) => {
-    console.log(URL + endpoint);
+    try {
+      const response = await fetch(URL + endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      });
 
-    const response = await fetch(URL + endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
-    });
-
-    setStatus(response.status);
-    setStatusText(response.statusText);
+      setStatus(response.status);
+      setStatusText(response.statusText);
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
@@ -37,6 +58,7 @@ export const App = () => {
       <section className="section">
         <div className="container">
           <h1 className="title is-2">Authentication and Login Form</h1>
+          {errorMessage}
           <Switch>
             <Route path="/auth">
               <AuthenticationForm
